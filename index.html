@@ -1,48 +1,6 @@
 <!DOCTYPE html>
-<html lang="ru">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Telegram Channel Messages</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 20px;
-        }
-        .message {
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            padding: 10px;
-            margin: 5px 0;
-        }
-    </style>
-</head>
-<body>
-    <h1>Сообщения из Telegram канала</h1>
-    <div id="messages"></div>
-
-    <script>
-        const TELEGRAM_BOT_TOKEN = '8776620555:AAEprKjWryt6soMpEU8zS0J7IiLR6156vb8'; // Замените на ваш токен
-        const TELEGRAM_CHANNEL_ID = '@chery_bomb_star'; // Замените на ваш ID канала
-
-        async function fetchMessages() {
-            const response = await fetch(`https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/getUpdates`);
-            const data = await response.json();
-            const messagesDiv = document.getElementById('messages');
-
-            if (data.ok && data.result.length > 0) {
-                data.result.forEach(update => {
-                    if (update.message && update.message.chat.username === TELEGRAM_CHANNEL_ID.replace('@', '')) {
-                        const message = document.createElement('div');
-                        message.className = 'message';
-                        message.innerText = update.message.text;
-                        messagesDiv.appendChild(message);
-                    }
-                });
-            }
-        }
-
-        fetchMessages();
-    </script>
-</body>
+<html>
+  <body>
+    Привет мир!
+  </body>
 </html>
